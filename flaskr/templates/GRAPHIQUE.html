@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<title>Le CORONAVIRUS</title>
+	<script src="dist/chart.bundle.js"></script>
+</head>
+<body>
+	<h1>Graphique montrant le nombre d'infecté par pays</h1>
+
+	<canvas id="myChart"></canvas>
+	<script>
+
+		var ctx = document.getElementById('myChart').getContext('2d');
+		var chart = new Chart(ctx, {
+			// The type of chart we want to create
+			type: 'bar',
+
+			// The data for our dataset
+			data: {
+				labels: ['Belgique', 'France', 'Italie', 'Espagne', 'Pays-bas', 'Chine'],
+				datasets: [{
+					label: 'Nombres de personnes infectées par pays (24/03/2020). ',
+					backgroundColor: 'rgb(0,127, 255)',
+					borderColor: 'rgb(255,255,255)',
+					data: [4269, 19856, 69176, 39676, 5560, 81171] ,
+					steppedLine: true
+				}]
+			},
+
+			// Configuration options go here
+			options: {}
+		});
+	</script>
+
+</body>
+</html>
